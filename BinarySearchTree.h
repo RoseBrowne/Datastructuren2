@@ -16,7 +16,7 @@ class BinarySearchTree : public Tree<T>{
 		void insert(T info);
 		bool contains(T info);
 		void rotateRight(TreeNode<T> *grandParent);
-		void rotateLeft(TreeNode<T> *node);
+		void rotateLeft(TreeNode<T> *grandParent);
 	private:
     void insert(T info, TreeNode<T> *node);
     void contains(T info, TreeNode<T> *node, bool &found);
@@ -92,6 +92,7 @@ void BinarySearchTree<T>::rotateRight(TreeNode<T> *grandParent){
 	parent->left = child->right;
 	child->right = parent;
 }
+
 template <class T>
 void BinarySearchTree<T>::rotateLeft(TreeNode<T> *grandParent){
 	TreeNode<T> *parent = grandParent->right;
