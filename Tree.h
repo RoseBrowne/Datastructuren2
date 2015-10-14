@@ -7,30 +7,7 @@
 #ifndef Tree_h
 #define Tree_h
 #include <fstream>
-#include <iostream>
-
-template <class T>
-class TreeNode{
-	public:
-		TreeNode(T info);
-		T getValue();
-		TreeNode<T> *left;
-		TreeNode<T> *right;
-	private:
-		T value;
-};
-
-template <class T>
-T TreeNode<T>::getValue(){
-	return value;
-}
-
-template <class T>
-TreeNode<T>::TreeNode(T info){
-	value = info;
-	left = NULL; 
-	right = NULL;
-}
+#include "TreeNode.h"
 
 template <class T>
 class Tree {
@@ -42,6 +19,7 @@ class Tree {
 		void showInOrder();
 		void showPostOrder();
 		void saveAsDot(std::string fileName);
+		TreeNode<T>* getRoot();
 		~Tree();
 	protected:
 		TreeNode<T> *root;
@@ -58,6 +36,11 @@ class Tree {
 template <class T>
 Tree<T>::Tree(){
 		root = NULL;
+}
+
+template <class T>
+TreeNode<T>* Tree<T>::getRoot(){
+	return root;
 }
 		
 template <class T>

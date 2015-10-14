@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include "TreeNode.h"
 #include "Tree.h"
 #include "BinarySearchTree.h"
 
@@ -42,7 +43,8 @@ int main(){
 	
 	BinarySearchTree<int> mySearchTree;
 	
-	int getal9 = 13;
+	int getal9 = 28;
+	int getal10 = 27;
 	
 	mySearchTree.insert(getal1);
 	mySearchTree.insert(getal2);
@@ -51,13 +53,19 @@ int main(){
 	mySearchTree.insert(getal5);
 	mySearchTree.insert(getal6);
 	mySearchTree.insert(getal7);
+	mySearchTree.insert(getal8);
 	mySearchTree.insert(getal9);
+	mySearchTree.insert(getal10);
 	
 	if(mySearchTree.contains(29)){
 		cout << "mySeachTree bevat het getal 29." << endl;
 	}
 	
 	mySearchTree.saveAsDot("dotGraph2.txt");
+
+	mySearchTree.rotateLeft(mySearchTree.getRoot());
+	
+	mySearchTree.saveAsDot("dotGraph3.txt");
 	
   return 0;
 }
