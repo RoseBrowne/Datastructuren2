@@ -84,8 +84,14 @@ void BinarySearchTree<T>::contains(T info, TreeNode<T> *node, bool &found){
 
 template <class T>
 void BinarySearchTree::rotateRight(TreeNode<T> *node){
+	TreeNode<T> hulpNode = node->left;
+    node->left = node->left->right;
+    hulpNode->right = node;
 }
 template <class T>
 void BinarySearchTree::rotateLeft(TreeNode<T> *node){
+	TreeNode<T> hulpNode = node->right;
+    node->right = node->right->left;
+    hulpNode->leftleft = node;
 }
 #endif 
