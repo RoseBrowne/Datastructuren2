@@ -23,8 +23,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD0375A11BCE614E001C08CD /* AVLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVLNode.h; sourceTree = "<group>"; };
+		CD0375A21BCE61F8001C08CD /* AVLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVLTree.h; sourceTree = "<group>"; };
+		CD6BFB3F1BE0E36F000CF0AC /* right.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = right.txt; sourceTree = "<group>"; };
 		CDAB40DB1BBBEAEC00D67247 /* Trees */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trees; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAB40DE1BBBEAEC00D67247 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CDAB40E51BBBEB2F00D67247 /* BinaryTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		CDC205111BC517F4002960C2 /* TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		CDC205121BC5281B002960C2 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
+		CDC205131BC52B03002960C2 /* BinarySearchTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +64,14 @@
 		CDAB40DD1BBBEAEC00D67247 /* Trees */ = {
 			isa = PBXGroup;
 			children = (
+				CD6BFB3F1BE0E36F000CF0AC /* right.txt */,
+				CDC205121BC5281B002960C2 /* text.txt */,
 				CDAB40DE1BBBEAEC00D67247 /* main.cpp */,
+				CDAB40E51BBBEB2F00D67247 /* BinaryTree.h */,
+				CDC205111BC517F4002960C2 /* TreeNode.h */,
+				CDC205131BC52B03002960C2 /* BinarySearchTree.h */,
+				CD0375A11BCE614E001C08CD /* AVLNode.h */,
+				CD0375A21BCE61F8001C08CD /* AVLTree.h */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
@@ -235,6 +249,7 @@
 				CDAB40E41BBBEAEC00D67247 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
