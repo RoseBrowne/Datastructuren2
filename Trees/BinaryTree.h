@@ -1,10 +1,12 @@
-//
-//  BinaryTree.h
-//  Trees
-//
-//  Created by Patrick Bergman on 30/09/15.
-//  Copyright © 2015 Patrick Bergman. All rights reserved.
-//
+/**
+* BinaryTree: A Tree in which new nodes can be inserted, deleted, searched for,
+* saved to a .dot file and be displayed in the 3 different orders.
+* @author Patrick Bergman (s1553097)
+* @author Rose Browne (s1652834)
+* @file BinaryTree.h
+* @date 01-11-2015
+*
+**/
 
 #ifndef BinaryTree_h
 #define BinaryTree_h
@@ -40,6 +42,8 @@ BinaryTree<T>::BinaryTree() {
     root = NULL;
 }
 
+/* If the root is equal to NULL the item to be inserted is the first 
+item of the tree and therefor automatically the root. */
 template <class T>
 void BinaryTree<T>::insert(T newItem) {
     if(root == NULL)
@@ -50,6 +54,8 @@ void BinaryTree<T>::insert(T newItem) {
     }
 }
 
+/* In case the item to be inserted is not the root of the tree, we need
+to find an available free space for the node. */
 template <class T>
 void BinaryTree<T>::insert(T newItem, TreeNode<T> *leaf) {
     if(leaf->rightLeaf) {
@@ -64,6 +70,8 @@ bool BinaryTree<T>::contains(T searchItem) {
     return contains(searchItem, root);
 }
 
+/* The noded we're looking for is compared to each node in the tree
+starting with the root untill we find one that equals it. */
 template <class T>
 bool BinaryTree<T>::contains(T searchItem, TreeNode<T> *leaf) {
     if(leaf != NULL) {
@@ -82,6 +90,7 @@ void BinaryTree<T>::showPreOrder() {
     showPreOrder(root);
 }
 
+/* Here the pre order ordening is printed to the screen. */
 template <class T>
 void BinaryTree<T>::showPreOrder(TreeNode<T> *leaf) {
     if(leaf != NULL) {
@@ -96,6 +105,7 @@ void BinaryTree<T>::showInOrder() {
     showInOrder(root);
 }
 
+/* Here the in order ordening is printed to the screen. */
 template <class T>
 void BinaryTree<T>::showInOrder(TreeNode<T> *leaf) {
     if(leaf != NULL) {
@@ -110,6 +120,7 @@ void BinaryTree<T>::showPostOrder() {
     showPostOrder(root);
 }
 
+/* Here the post order ordening is printed to the screen. */
 template <class T>
 void BinaryTree<T>::showPostOrder(TreeNode<T> *leaf) {
     if(leaf != NULL) {
@@ -119,6 +130,10 @@ void BinaryTree<T>::showPostOrder(TreeNode<T> *leaf) {
     }
 }
 
+/* Here the current tree is saved to a .dot file. First code to begin
+and end an .dot file and the root are written to a .dot file
+ (in case it doesn't equal NULL). In between the function is called again
+ with extra parameters to print all the children of the root. */
 template <class T>
 void BinaryTree<T>::saveAsDot(std::string fileName) {
     if(root != NULL) {
@@ -136,6 +151,9 @@ void BinaryTree<T>::saveAsDot(std::string fileName) {
     }
 }
 
+/* Here the children of the root are written to the .dot file. Within 
+the function a nodeCounter is kept to know which node is connected to
+which node. */
 template <class T>
 void BinaryTree<T>::saveAsDot(TreeNode<T> *leaf, int &parentNode, std::ofstream &file) {
     if(leaf != NULL) {
@@ -158,6 +176,7 @@ void BinaryTree<T>::saveAsDot(TreeNode<T> *leaf, int &parentNode, std::ofstream 
     }
 }
 
+/* Here the tree is destroyed. */
 template <class T>
 void BinaryTree<T>::destroyTree(TreeNode<T> *leaf) {
     if(leaf != NULL) {
